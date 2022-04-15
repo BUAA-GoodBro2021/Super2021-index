@@ -72,7 +72,7 @@
 </script>
 
 <div class="navbar bg-neutral text-neutral-content max h-5">
-	<div><img src="src\image\super2021.png" alt="super2021" width="154px" /></div>
+	<div><img src="image/super2021.png" alt="super2021" width="154px" /></div>
 	<a href="https://scs.buaa.edu.cn/" class="btn">云平台</a>
 	<a href="https://spoc.buaa.edu.cn/" class="btn">SPOC</a>
 	<a href="https://os.buaa.edu.cn/" class="btn">OS</a>
@@ -80,7 +80,7 @@
 	<a href="https://github.com/" class="btn">Github</a>
 </div>
 
-<div class="hero min-h-screen" style='background-image: url("src/image/bg.jpg");'>
+<div class="hero min-h-screen" style='background-image: url("image/bg.jpg");'>
 	<div class="hero-overlay  bg-opacity-60" />
 
 	<div class="hero-content w-11/12 grid grid-cols-7 gap-4 " >
