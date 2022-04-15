@@ -4,6 +4,7 @@
   import '../app.css';
   let now = '';
   let day = '';
+  let search= '';
 	let data = [
 		{
 			projectName: 'Wudao',
@@ -60,9 +61,12 @@
 		now = now + completion(date.getMinutes()) + ':';
 		now = now + completion(date.getSeconds());
 	}
+	function toBing(){
+		window.location.href = "https://cn.bing.com/search?q=" + search;
+	}
   onMount(() => {
 		console.log('the component has mounted');
-    const interval = setInterval(showTime, 1000);
+    const interval = setInterval(showTime, 100);
 	});
 </script>
 
@@ -76,27 +80,38 @@
 </div>
 
 <div class="hero min-h-screen" style='background-image: url("src/image/bg.jpg");'>
-	<div class="hero-overlay bg-opacity-60" />
+	<div class="hero-overlay  bg-opacity-60" />
 
-	<div class="grid grid-cols-5 gap-4 max-w-full">
-	<div class="text-left text-neutral-content col-span-3">
+	<div class="hero-content w-11/12 grid grid-cols-7 gap-4 " >
+		<div class="col-span-1"/>
+	<div class="text-center text-neutral-content col-span-3">
 		<div class="max-w-md">
 			<h1 class="mb-5 text-7xl font-bold">Super2021</h1>
 			<p class="mb-5 text-5xl font-bold"></p>
 			<h2 class="mb-5 text-6xl font-bold">{now}</h2>
 		</div>
 	</div>
-	<div class="form-control col-span-2 max-width">
-		<div class="input-group">
-		  <input type="text" placeholder="Search…" class="input input-bordered">
-		  <button class="btn btn-square">
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+	<div class="col-span-3">
+	<div class="form-control  w-4/5 ">
+		<div class="input-group grid grid-cols-12">
+		  <input type="text" placeholder="Search…" class="input input-bordered col-span-10" bind:value={search}>
+		  <button class="btn btn-square col-span-2" on:click={toBing} on:keypress={toBing}>
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
 		  </button>
 		</div>
 	  </div>
 	</div>
-
 </div>
+<footer class="place-self-end mr-5">
+    <div class="text-center p-2 text-white text-sm font-mono rounded ">
+      <span>© 2022 Copyright: </span>
+      <a href="https://github.com/BUAA-GoodBro2021/Super2021-index">BUAA-GoodBro2021</a>
+      |
+      <a href="https://beian.miit.gov.cn">京ICP备2022007189号-2</a>
+    </div>  
+  </footer>
+</div>
+
 {#each data as d}
 <div class={d.bgcolor}>
 	<br />
