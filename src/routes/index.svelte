@@ -19,30 +19,13 @@
 		{
 			projectName: 'StarMap',
 			introduction: 'TAT',
-			author: '几个人&周恩申大哥',
+			author: 'Zhoues',
 			github: 'https://github.com/BUAA-OpenMap-Group',
 			web: 'https://www.zhoues.com',
 			background:"https://923259.smushcdn.com/2321054/wp-content/uploads/2019/05/what-is-data-science-1.jpg",
 			bgcolor:"bg-base-200"
 		},
-		{
-			projectName: 'Wudao',
-			introduction: 'QAQ',
-			author: 'TualatinX,LLLeo,BITTIO,echo子懿,woarthur',
-			github: 'https://github.com/WuDaoGroup',
-			web: 'https://wudao.netlify.app/',
-			background:"https://923259.smushcdn.com/2321054/wp-content/uploads/2019/05/what-is-data-science-1.jpg",
-			bgcolor:"bg-base-300"
-		},
-		{
-			projectName: 'StarMap',
-			introduction: 'TAT',
-			author: '几个人&周恩申大哥',
-			github: 'https://github.com/BUAA-OpenMap-Group',
-			web: 'https://www.zhoues.com',
-			background:"https://923259.smushcdn.com/2321054/wp-content/uploads/2019/05/what-is-data-science-1.jpg",
-			bgcolor:"bg-base-200"
-		}
+		
 	];
 	function timeCompletion(a){
 		if(a<10){
