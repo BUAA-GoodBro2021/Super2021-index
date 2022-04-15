@@ -5,6 +5,7 @@
   let now = '';
   let day = '';
   let search= '';
+  let baseurl = 'google';
 	let data = [
 		{
 			projectName: 'Wudao',
@@ -43,7 +44,7 @@
 			bgcolor:"bg-base-200"
 		}
 	];
-	function completion(a){
+	function timeCompletion(a){
 		if(a<10){
 			return '0' + a;
 		}
@@ -57,9 +58,9 @@
 		day = day + (date.getMonth() + 1) + '月'; 
 		day = day + date.getDate() + '日';
 
-		now = completion(date.getHours()) + ':';
-		now = now + completion(date.getMinutes()) + ':';
-		now = now + completion(date.getSeconds());
+		now = timeCompletion(date.getHours()) + ':';
+		now = now + timeCompletion(date.getMinutes()) + ':';
+		now = now + timeCompletion(date.getSeconds());
 	}
 	function toBing(){
 		window.location.href = "https://cn.bing.com/search?q=" + search;
@@ -86,16 +87,25 @@
 		<div class="col-span-1"/>
 	<div class="text-center text-neutral-content col-span-3">
 		<div class="max-w-md">
-			<h1 class="mb-5 text-7xl font-bold">Super2021</h1>
-			<p class="mb-5 text-5xl font-bold"></p>
-			<h2 class="mb-5 text-6xl font-bold">{now}</h2>
+			<h1 class="mb-5 text-7xl font-mono font-bold">Super2021</h1>
+			<p class="mb-5 text-5xl font-bold "></p>
+			<h2 class="mb-5 text-6xl font-mono font-bold">{now}</h2>
+			<h1 class="font-serif">{day}</h1>
 		</div>
 	</div>
 	<div class="col-span-3">
-	<div class="form-control  w-4/5 ">
+	<div class="form-control  ">
 		<div class="input-group grid grid-cols-12">
-		  <input type="text" placeholder="Search…" class="input input-bordered col-span-10" bind:value={search}>
-		  <button class="btn btn-square col-span-2" on:click={toBing} on:keypress={toBing}>
+			<select class="select w-full max-w-xs col-span-3">
+				<option value="bing">Bing</option>
+				<option value="google" >Google</option>
+				<option value="baidu">Baidu</option>
+				<option value="github">Github</option>
+				<option value="bilibili">Bilibili</option>
+			  </select>
+		  <input type="text" placeholder="Search…" class="input input-bordered col-span-8" bind:value={search}>
+		  
+		  <button class="btn btn-square " on:click={toBing} on:keypress={toBing}>
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
 		  </button>
 		</div>
