@@ -1,11 +1,19 @@
 <script>
 	import { onMount } from 'svelte';
-  import { afterUpdate } from 'svelte';
   import '../app.css';
   let now = '';
   let day = '';
   let search= '';
-  let baseurl = 'google';
+  let selected;
+
+  let searchEngines = [
+	{ id: 1, text: `Bing`, url: "https://cn.bing.com/search?q=" , home:"https://cn.bing.com"},
+    { id: 2, text: `Google`, url: "https://www.google.com.hk/search?q=", home: "https://www.google.com.hk"},
+    { id: 3, text: `Baidu`, url: "https://www.baidu.com/s?ie=utf-8&word=", home: "https://www.baidu.com"},
+    { id: 4, text: `GitHub`, url: "https://github.com/search?q=", home: "https://github.com"},
+	{ id: 5, text: `Bilibili`, url: "https://search.bilibili.com/all?keyword=",  home: "https://space.bilibili.com"},
+    { id: 6, text: `arXiv`, url: "https://arxiv.org/search/?searchtype=all&source=header&query=",  home: "https://arxiv.org"},
+  ];
 	let data = [
 		{
 			projectName: 'Wudao',
@@ -45,15 +53,21 @@
 		now = now + timeCompletion(date.getMinutes()) + ':';
 		now = now + timeCompletion(date.getSeconds());
 	}
-	function toBing(){
-		window.location.href = "https://cn.bing.com/search?q=" + search;
-	}
+	function toSearch() {
+		if(search == ""){
+			window.location.href = selected.home;
+		}
+		else{
+			window.location.href = selected.url + search;
+		}
+  }
+	
   onMount(() => {
 		console.log('the component has mounted');
     const interval = setInterval(showTime, 100);
 	});
 </script>
-
+<title>Super2021超乎你的想象!</title>
 <div class="navbar bg-neutral text-neutral-content max h-5">
 	<div><img src="image/super2021.png" alt="super2021" width="154px" /></div>
 	<a href="https://scs.buaa.edu.cn/" class="btn">云平台</a>
@@ -77,18 +91,18 @@
 		</div>
 	</div>
 	<div class="col-span-3">
-	<div class="form-control  ">
+	<div class="form-control" >
 		<div class="input-group grid grid-cols-12">
-			<select class="select w-full max-w-xs col-span-3">
-				<option value="bing">Bing</option>
-				<option value="google" >Google</option>
-				<option value="baidu">Baidu</option>
-				<option value="github">Github</option>
-				<option value="bilibili">Bilibili</option>
-			  </select>
-		  <input type="text" placeholder="Search…" class="input input-bordered col-span-8" bind:value={search}>
+			<select class="select w-full max-w-xs col-span-3 " bind:value={selected}>
+				{#each searchEngines as engine}
+      				<option value={engine} class="font-mono">
+        			{engine.text}
+      				</option>
+    			{/each}
+			</select>
+		  <input type="search" placeholder="Search…" class="input input-bordered col-span-8" bind:value={search}>
 		  
-		  <button class="btn btn-square " on:click={toBing} on:keypress={toBing}>
+		  <button class="btn btn-square " on:click|preventDefault={toSearch}>
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
 		  </button>
 		</div>
