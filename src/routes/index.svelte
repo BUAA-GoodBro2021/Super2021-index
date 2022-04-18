@@ -6,6 +6,7 @@
   let search= '';
   let selected;
   let showWindow = 0;
+ 
   let searchEngines = [
 	{ id: 1, text: `Bing`, url: "https://cn.bing.com/search?q=" , home:"https://cn.bing.com"},
     { id: 2, text: `Google`, url: "https://www.google.com.hk/search?q=", home: "https://www.google.com.hk"},
@@ -62,21 +63,23 @@
 		}
   }
 	
-  onMount(async () => {
-	console.log(document.documentElement.clientHeight);
-	console.log(document.documentElement.clientWidth);
-    const interval = setInterval(showTime, 100);
-
-	
-	
-	if(document.documentElement.clientWidth > document.documentElement.clientHeight){
+  	function getWindowSize(){
+		if(document.documentElement.clientWidth > document.documentElement.clientHeight){
 		showWindow = 1;
 	}
 	else{
 		showWindow = 0;
 	}
 	console.log(showWindow);
+	  }
+
+  onMount(async () => {
+	console.log(document.documentElement.clientHeight);
+	console.log(document.documentElement.clientWidth);
+    const interval1 = setInterval(showTime, 100);
+	const interval2 = setInterval(getWindowSize, 100);
 	});
+
 </script>
 <title>Super2021超乎你的想象!</title>
 
