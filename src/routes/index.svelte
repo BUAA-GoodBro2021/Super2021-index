@@ -179,7 +179,7 @@
 
 
 {:else}
-<div width={document.documentElement.clientWidth} height={document.documentElement.clientHeight}>
+<div>
 <div class="navbar bg-neutral text-neutral-content max h-5">
 	<div><img src="image/super2021.png" alt="super2021" width="154px" /></div>
 	<a href="http://10.212.28.38/" class="btn">TD查询</a>
@@ -189,9 +189,9 @@
 	<div class="hero-content h-11/12 flex" >
 	<div class="text-center text-neutral-content">
 		<div class="max-w-md">
-			<h1 class="mb-5 text-7xl font-mono font-bold" in:fly="{{  delay: 3000, y: 100, duration: 2000 }}">Super2021</h1>
-			<p class="mb-5 text-5xl font-bold "></p>
-			<h2 class="mb-5 text-6xl font-mono font-bold" in:fade="{{ duration: 2000 ,delay :4000}}">{now}</h2>
+			<h1 class="mb-5 text-4xl font-mono font-bold" in:fly="{{  delay: 3000, y: 100, duration: 2000 }}">Super2021</h1>
+			<p class="mb-5 text-2xl font-bold "></p>
+			<h2 class="mb-5 text-3xl font-mono font-bold" in:fade="{{ duration: 2000 ,delay :4000}}">{now}</h2>
 			<h1 class="font-serif" in:fade="{{duration: 2000 ,delay :4000}}" >{day}</h1>
 		</div>
 	</div>
