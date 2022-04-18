@@ -6,7 +6,7 @@
   let day = '';
   let search= '';
   let selected;
-  let showWindow = 1;
+  let showWindow = 0;
  
   let searchEngines = [
 	{ id: 1, text: `Bing`, url: "https://cn.bing.com/search?q=" , home:"https://cn.bing.com"},
@@ -77,6 +77,12 @@
 	console.log(document.documentElement.clientHeight);
 	console.log(document.documentElement.clientWidth);
     const interval1 = setInterval(showTime, 100);
+	if(document.documentElement.clientWidth > document.documentElement.clientHeight){
+		showWindow = 1;
+	}
+	else{
+		showWindow = 0;
+	}
 	const interval2 = setInterval(getWindowSize, 100);
 	});
 
