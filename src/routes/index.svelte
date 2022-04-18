@@ -5,7 +5,7 @@
   let day = '';
   let search= '';
   let selected;
-
+  let showWindow = 0;
   let searchEngines = [
 	{ id: 1, text: `Bing`, url: "https://cn.bing.com/search?q=" , home:"https://cn.bing.com"},
     { id: 2, text: `Google`, url: "https://www.google.com.hk/search?q=", home: "https://www.google.com.hk"},
@@ -62,12 +62,26 @@
 		}
   }
 	
-  onMount(() => {
-		console.log('the component has mounted');
+  onMount(async () => {
+	console.log(document.documentElement.clientHeight);
+	console.log(document.documentElement.clientWidth);
     const interval = setInterval(showTime, 100);
+
+	
+	
+	if(document.documentElement.clientWidth > document.documentElement.clientHeight){
+		showWindow = 1;
+	}
+	else{
+		showWindow = 0;
+	}
+	console.log(showWindow);
 	});
 </script>
 <title>Super2021超乎你的想象!</title>
+
+{#if showWindow==1}
+
 <div class="navbar bg-neutral text-neutral-content max h-5">
 	<div><img src="image/super2021.png" alt="super2021" width="154px" /></div>
 	<a href="https://scs.buaa.edu.cn/" class="btn">云平台</a>
@@ -157,3 +171,20 @@
 	<br />
 </div>
 {/each}
+
+
+
+
+{:else}
+
+<div class="navbar bg-neutral text-neutral-content max h-5">
+	<div><img src="image/super2021.png" alt="super2021" width="154px" /></div>
+	<a href="http://10.212.28.38/" class="btn">TD查询</a>
+</div>
+
+<h1> 手机端适配制作中 </h1>
+
+
+
+
+{/if}
