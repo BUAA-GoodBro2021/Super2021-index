@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
   import '../app.css';
+  import { fly,fade } from 'svelte/transition';
   let now = '';
   let day = '';
   let search= '';
@@ -70,7 +71,6 @@
 	else{
 		showWindow = 0;
 	}
-	console.log(showWindow);
 	  }
 
   onMount(async () => {
@@ -101,10 +101,10 @@
 		<div class="col-span-1"/>
 	<div class="text-center text-neutral-content col-span-3">
 		<div class="max-w-md">
-			<h1 class="mb-5 text-7xl font-mono font-bold">Super2021</h1>
+			<h1 class="mb-5 text-7xl font-mono font-bold" in:fly="{{ y: 100, duration: 2000 }}">Super2021</h1>
 			<p class="mb-5 text-5xl font-bold "></p>
-			<h2 class="mb-5 text-6xl font-mono font-bold">{now}</h2>
-			<h1 class="font-serif">{day}</h1>
+			<h2 class="mb-5 text-6xl font-mono font-bold" in:fade="{{ duration: 2000 ,delay :1000}}">{now}</h2>
+			<h1 class="font-serif" in:fade="{{duration: 2000 ,delay :1000}}" >{day}</h1>
 		</div>
 	</div>
 	<div class="col-span-3">
@@ -184,10 +184,27 @@
 	<div><img src="image/super2021.png" alt="super2021" width="154px" /></div>
 	<a href="http://10.212.28.38/" class="btn">TD查询</a>
 </div>
-
-<h1> 手机端适配制作中 </h1>
-
-
+<div class="hero min-h-screen" style='background-image: url("image/bg.jpg");'>
+	<div class="hero-overlay  bg-opacity-60" />
+	<div class="hero-content h-11/12 flex" >
+	<div class="text-center text-neutral-content">
+		<div class="max-w-md">
+			<h1 class="mb-5 text-7xl font-mono font-bold" in:fly="{{ y: 100, duration: 2000 }}">Super2021</h1>
+			<p class="mb-5 text-5xl font-bold "></p>
+			<h2 class="mb-5 text-6xl font-mono font-bold" in:fade="{{ duration: 2000 ,delay :1000}}">{now}</h2>
+			<h1 class="font-serif" in:fade="{{duration: 2000 ,delay :1000}}" >{day}</h1>
+		</div>
+	</div>
+</div>
+<footer class="place-self-end mr-5">
+    <div class="text-center p-2 text-white text-sm font-mono rounded ">
+      <span>© 2022 Copyright: </span>
+      <a href="https://github.com/BUAA-GoodBro2021/Super2021-index">BUAA-GoodBro2021</a>
+      |
+      <a href="https://beian.miit.gov.cn">京ICP备2022007189号-2</a>
+    </div>  
+  </footer>
+</div>
 
 
 {/if}
