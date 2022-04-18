@@ -6,7 +6,7 @@
   let day = '';
   let search= '';
   let selected;
-  let showWindow = 0;
+  let showWindow = 1;
  
   let searchEngines = [
 	{ id: 1, text: `Bing`, url: "https://cn.bing.com/search?q=" , home:"https://cn.bing.com"},
@@ -189,10 +189,10 @@
 	<div class="hero-content h-11/12 flex" >
 	<div class="text-center text-neutral-content">
 		<div class="max-w-md">
-			<h1 class="mb-5 text-4xl font-mono font-bold" in:fly="{{  delay: 3000, y: 100, duration: 2000 }}">Super2021</h1>
-			<p class="mb-5 text-2xl font-bold "></p>
-			<h2 class="mb-5 text-3xl font-mono font-bold" in:fade="{{ duration: 2000 ,delay :4000}}">{now}</h2>
-			<h1 class="font-serif" in:fade="{{duration: 2000 ,delay :4000}}" >{day}</h1>
+			<h1 class="mb-5 text-5xl font-mono font-bold" in:fly="{{  y: 100, duration: 2000 }}">Super2021</h1>
+			<p class="mb-5 text-3xl font-bold "></p>
+			<h2 class="mb-5 text-4xl font-mono font-bold" in:fade="{{ duration: 2000 ,delay :1000}}">{now}</h2>
+			<h1 class="font-serif" in:fade="{{duration: 2000 ,delay :1000}}" >{day}</h1>
 		</div>
 	</div>
 </div>
