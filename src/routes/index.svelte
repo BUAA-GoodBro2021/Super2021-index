@@ -98,6 +98,8 @@
 	<a href="https://os.buaa.edu.cn/" class="btn">OS</a>
 	<a href="http://lab.os.buaa.edu.cn/" class="btn">Lab</a>
 	<a href="https://github.com/" class="btn">Github</a>
+	<a href="https://madmalls.com/" class="btn">软工</a>
+	<a href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html" class="btn">Pytorch</a>
 </div>
 
 <div class="hero min-h-screen" style='background-image: url("image/bg.jpg");'>
