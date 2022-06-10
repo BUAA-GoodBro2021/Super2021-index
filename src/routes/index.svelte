@@ -214,8 +214,6 @@
     <div class="text-center p-2 text-white text-sm font-mono rounded ">
       <span>© 2022 Copyright: </span>
       <a href="https://github.com/BUAA-GoodBro2021/Super2021-index">BUAA-GoodBro2021</a>
-      |
-      <a href="https://beian.miit.gov.cn">京ICP备2022007189号-2</a>
     </div>  
   </footer>
 </div>
