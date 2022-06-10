@@ -103,8 +103,7 @@
 	<a href="https://os.buaa.edu.cn/" class="btn">OS</a>
 	<a href="http://lab.os.buaa.edu.cn/" class="btn">Lab</a>
 	<a href="https://github.com/" class="btn">Github</a>
-	<a href="http://milimili.super2021.com" class="btn">Milimili</a>
-	<a href="http://bose.super2021.com" class="btn">Bose</a>
+	<a href="https://madmalls.com/" class="btn">软工</a>
 	<a href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html" class="btn">Pytorch</a>
 </div>
 
@@ -169,7 +168,7 @@
 			</div>
 		</div>
 	</div> -->
-	<!-- <div class="grid grid-cols-12 gap-4">
+	<div class="grid grid-cols-12 gap-4">
 		<div class="col-span-2" />
 	<div class="card  bg-base-100 shadow-xl image-full col-span-8">
 		<figure><img src={d.background} alt="Shoes" /></figure>
@@ -184,7 +183,7 @@
 			</div>
 		</div>
 	  </div>
-	</div> -->
+	</div>
 	<br />
 </div>
 {/each}
@@ -214,6 +213,8 @@
     <div class="text-center p-2 text-white text-sm font-mono rounded ">
       <span>© 2022 Copyright: </span>
       <a href="https://github.com/BUAA-GoodBro2021/Super2021-index">BUAA-GoodBro2021</a>
+      |
+      <a href="https://beian.miit.gov.cn">京ICP备2022007189号-2</a>
     </div>  
   </footer>
 </div>
