@@ -151,10 +151,10 @@
   </footer>
 </div>
 
-{#each data as d}
+<!-- {#each data as d}
 <div class={d.bgcolor}>
 	<br />
-	<!-- <div class="grid grid-cols-12 gap-4">
+	<div class="grid grid-cols-12 gap-4">
 		<div class="col-span-2" />
 		<div class="card lg:card-side bg-base-100 shadow-xl  col-span-8 ">
 			 <figure class="max-w-6xl"><img src="src\image\super2021.png"  alt="echo"></figure> 
@@ -185,10 +185,10 @@
 			</div>
 		</div>
 	  </div>
-	</div> -->
+	</div>
 	<br />
 </div>
-{/each}
+{/each} -->
 
 
 
