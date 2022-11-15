@@ -1,11 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
-  import '../app.css';
+  import '../tailwind.css';
   import { fly,fade } from 'svelte/transition';
+
   let now = '';
   let day = '';
   let search= '';
-  let selected;
+
   let showWindow = 0;
  
   let searchEngines = [
@@ -16,6 +17,7 @@
 	{ id: 5, text: `Bilibili`, url: "https://search.bilibili.com/all?keyword=",  home: "https://space.bilibili.com"},
     { id: 6, text: `arXiv`, url: "https://arxiv.org/search/?searchtype=all&source=header&query=",  home: "https://arxiv.org"},
   ];
+  let selected=searchEngines[0];
 	let data = [
 		{
 			projectName: 'Wudao',
@@ -59,6 +61,8 @@
 		now = timeCompletion(date.getHours()) + ':';
 		now = now + timeCompletion(date.getMinutes()) + ':';
 		now = now + timeCompletion(date.getSeconds());
+
+		
 	}
 	function toSearch() {
 		if(search == ""){
@@ -101,12 +105,14 @@
 	<div><img src="image/super2021.png" alt="super2021" width="154px" /></div>
 	<a href="https://scs.buaa.edu.cn/" class="btn">云平台</a>
 	<a href="https://spoc.buaa.edu.cn/" class="btn">SPOC</a>
-	<a href="https://os.buaa.edu.cn/" class="btn">OS</a>
-	<a href="http://lab.os.buaa.edu.cn/" class="btn">Lab</a>
+	<a href="https://judge.buaa.edu.cn/" class="btn">希冀</a>
+	<a href="https://accoding.buaa.edu.cn/" class="btn">OJ</a>
 	<a href="https://github.com/" class="btn">Github</a>
-	<a href="http://milimili.super2021.com" class="btn">Milimili</a>
-	<a href="http://bose.super2021.com" class="btn">Bose</a>
-	<a href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html" class="btn">Pytorch</a>
+	<a href="https://os.buaa.edu.cn/" class="btn">OS</a>
+	<a href="http://lab.os.buaa.edu.cn/" class="btn">OSLab</a>
+	<a href="http://10.134.136.71:9995/" class="btn">SE</a>
+	<a href="http://network-lab.mooc.buaa.edu.cn/?m=Home" class="btn">计网</a>
+	<a href="https://zh.d2l.ai" class="btn">DL</a>
 </div>
 
 <div class="hero min-h-screen" style='background-image: url("image/bg.jpg");'>
@@ -125,14 +131,14 @@
 	<div class="col-span-3">
 	<div class="form-control" >
 		<div class="input-group grid grid-cols-12">
-			<select class="select w-full max-w-xs col-span-3 " bind:value={selected}>
+			<select class="select select-bordered col-span-3 " bind:value={selected}>
 				{#each searchEngines as engine}
       				<option value={engine} class="font-mono">
         			{engine.text}
       				</option>
     			{/each}
 			</select>
-		  <input type="search" placeholder="Search…" class="input input-bordered col-span-8" bind:value={search} on:keydown={submit}>
+		  <input type="search" placeholder="Search… " class="input input-bordered col-span-8" bind:value={search} on:keydown={submit}>
 		  
 		  <button class="btn btn-square " on:click|preventDefault={toSearch}>
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -221,3 +227,18 @@
 
 </div>
 {/if}
+
+<style type="text/css">
+.input-group :first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0.5rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0.5rem;
+}
+.input-group :last-child {
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0.5rem; 
+    border-bottom-left-radius: 0;
+}
+</style>
