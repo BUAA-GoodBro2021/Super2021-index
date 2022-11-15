@@ -5,5 +5,6 @@ export default {
     adapter: adapter({
       fallback: 'index.html'
     })
-  }
+  },
+
 };
